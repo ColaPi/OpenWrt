@@ -7,4 +7,4 @@ src-git telephony https://git.openwrt.org/feed/telephony.git
 # openclash
 src-git openclash https://github.com/vernesong/OpenClash.git
 # netmaker
-src-git netmaker http://github.com/sbilly/netmaker-openwrt.git
+src-git netmaker https://github.com/sbilly/netmaker-openwrt.git
