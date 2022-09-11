@@ -1,4 +1,4 @@
-FROM ubnunt
+FROM ubuntu
 
 RUN apt update -y &&\
     apt full-upgrade -y &&\
