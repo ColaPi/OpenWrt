@@ -23,7 +23,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   BUILD_CONFIG: devices/x86_64/.config
-  CONFIGS_DIR: devices/x86_64/etc/config
+  CONFIGS_DIR: devices/x86_64/files
   FEEDS_CONF: feeds.conf.default
   DIY_P1_SH: diy-part1.sh
 
@@ -57,16 +57,11 @@ jobs:
 
       - name: Load custom feeds
         run: |
+          [ -e devices/x86_64/files ] && mv files openwrt/files
           [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
           chmod +x $DIY_P1_SH
           cd openwrt
           ../$DIY_P1_SH
-
-      - name: Copy custom configs
-        working-directory: ./openwrt
-        run: |
-          mkdir -p files/etc
-          [ -d "$CONFIGS_DIR" ] && mv $CONFIGS_DIR files/etc/
 
       - name: Update feeds
         working-directory: ./openwrt
