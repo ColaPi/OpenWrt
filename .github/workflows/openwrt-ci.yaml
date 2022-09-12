@@ -65,7 +65,7 @@ jobs:
       - name: Copy custom configs
         working-directory: ./openwrt
         run: |
-          mkdir files
+          [ ! -d files ] && mkdir -p files/etc
           [ -d $CONFIGS_DIR ] && mv $CONFIGS_DIR files/etc/
 
       - name: Update feeds
