@@ -17,8 +17,9 @@ on:
       - '.github/workflows/build-root.yaml'
       - 'Dockerfile'
   schedule:
-   - cron: 0 0 * * 5
-
+    - cron: 0 0 * * 5
+  workflow_dispatch: {}
+   
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
