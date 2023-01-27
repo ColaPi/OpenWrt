@@ -44,7 +44,6 @@ jobs:
           # Note: tags has to be all lower-case
           tags: |
             ghcr.io/colapi/lede:latest
-          platforms: linux/amd64,linux/arm64
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
