@@ -13,9 +13,9 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - '.github/workflows/build-root.yaml'
-      - 'Dockerfile'
+    paths:
+      - '.github/workflows/build-lede.yaml'
+      - 'devices/x86_64/**'
   schedule:
     - cron: 0 0 * * 5
   workflow_dispatch: {}
