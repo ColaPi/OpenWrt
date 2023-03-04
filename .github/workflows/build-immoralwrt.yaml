@@ -50,14 +50,6 @@ jobs:
       - name: Clone source code
         run: git clone --single-branch $REPO_URL -b $REPO_BRANCH openwrt
 
-      - name: Load custom feeds
-        run: |
-          [ -e devices/redmi-ax6s/files ] && mv devices/redmi-ax6s/files openwrt/files
-          [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-          chmod +x $DIY_SH
-          cd openwrt
-          ../$DIY_SH
-
       - name: Update feeds
         working-directory: ./openwrt
         run: |
