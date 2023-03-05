@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - '.github/workflows/build-immoralwrt.yaml'
-      - 'devices/redmi-ax6s/.config'
+      - 'devices/newifi-d2/.config'
   schedule:
     - cron: 0 0 * * 5
   workflow_dispatch: {}
@@ -14,8 +14,8 @@ on:
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
   REPO_BRANCH: master
-  BUILD_CONFIG: devices/redmi-ax6s/.config
-  CONFIGS_DIR: devices/redmi-ax6s/files
+  BUILD_CONFIG: devices/newifi-d2/.config
+  CONFIGS_DIR: devices/newifi-d2/files
 
 jobs:
   build_openwrt:
